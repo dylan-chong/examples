@@ -53,7 +53,7 @@ symbols = {
     'backslash': '\\',
 }
 modifiers = {
-    'cherrio': 'cmd',
+    'cheerio': 'cmd',
     'con': 'ctrl',
     'big': 'shift',
     'altering': 'alt',
