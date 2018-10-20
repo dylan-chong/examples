@@ -20,7 +20,7 @@ symbols = {
     'plus': '+',
     'equals': '=',
     'tilde': '~',
-    'backtick': '`',
+    'back tick': '`',
     'bang': '!',
     'dollar': '$',
     'underscore': '_',
@@ -106,7 +106,6 @@ def press_keys(m):
 
 ctx = Context('basic_keys')
 ctx.keymap({
-    '(uppercase | ship) {basic_keys.alphabet}+ [(lowercase | sunk)]': uppercase_letters,
     '{basic_keys.modifiers}* {basic_keys.alphabet}+': press_keys,
     '{basic_keys.modifiers}* {basic_keys.digits}+': press_keys,
     '{basic_keys.modifiers}* {basic_keys.keys}+': press_keys,
