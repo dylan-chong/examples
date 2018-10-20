@@ -6,10 +6,16 @@ alpha_alt = 'share bat cap drum each fine gust harp sit jury crunch look made ne
 f_keys = {f'F {i}': f'f{i}' for i in range(1, 13)}
 # arrows are separated because 'up' has a high false positive rate
 arrows = ['left', 'right', 'up', 'down']
-simple_keys = [
-    'tab', 'escape', 'enter', 'space',
-    'home', 'pageup', 'pagedown', 'end',
-]
+simple_keys = {
+    'tab': 'tab',
+    'quit': 'escape',
+    'enter': 'enter',
+    'space': 'space',
+    'home': 'home',
+    'pageup': 'pageup',
+    'pagedown': 'pagedown',
+    'end': 'end',
+}
 alternate_keys = {
     'delete': 'backspace',
     'forward delete': 'delete',
@@ -62,7 +68,6 @@ modifiers = {
 
 alphabet = dict(zip(alpha_alt, string.ascii_lowercase))
 digits = {str(i): str(i) for i in range(10)}
-simple_keys = {k: k for k in simple_keys}
 arrows = {k: k for k in arrows}
 keys = {}
 keys.update(f_keys)
