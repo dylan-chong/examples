@@ -28,11 +28,11 @@ symbols = {
     'equals': '=',
 }
 modifiers = {
-    'command': 'cmd',
-    'control': 'ctrl',
-    'shift': 'shift',
-    'alt': 'alt',
-    'option': 'alt',
+    'cherrio': 'cmd',
+    'con': 'ctrl',
+    'big': 'shift',
+    'altering': 'alt',
+    'mash mod': 'cmd-shift-ctrl',
 }
 
 alphabet = dict(zip(alpha_alt, string.ascii_lowercase))
