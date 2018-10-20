@@ -49,6 +49,8 @@ symbols = {
     'point': '.',
     'comma': ',',
     'space': ' ',
+    'slash': '/',
+    'backslash': '\\',
 }
 modifiers = {
     'cherrio': 'cmd',
