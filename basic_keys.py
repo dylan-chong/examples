@@ -44,8 +44,8 @@ symbols = {
     'ampersand': '&',
     'piper': '|',
 
-    'dubquote': '"',
-    'singquote': "'",
+    'dub quote': '"',
+    'sing quote': "'",
     'point': '.',
     'comma': ',',
     'space': ' ',
