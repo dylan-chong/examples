@@ -48,7 +48,6 @@ symbols = {
     'singquote': "'",
     'point': '.',
     'comma': ',',
-    'swipe': ',',
     'space': ' ',
 }
 modifiers = {
