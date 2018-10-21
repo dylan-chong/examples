@@ -55,6 +55,8 @@ symbols = {
     'point': '.',
     'comma': ',',
     'space': ' ',
+    'slash': '/',
+    'backslash': '\\',
 }
 modifiers = {
     'cheerio': 'cmd',
