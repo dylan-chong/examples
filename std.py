@@ -108,12 +108,6 @@ def copy_bundle(m):
 
 ctx = Context('input')
 ctx.keymap({
-    'say <dgndictation> [over]': text,
-
-    'sentence <dgndictation> [over]': sentence_text,
-    'comma <dgndictation> [over]': [', ', text],
-    'period <dgndictation> [over]': ['. ', sentence_text],
-    'more <dgndictation> [over]': [' ', text],
     'word <dgnwords>': word,
 
     '(%s) [<dgndictation>]' % (' | '.join(formatters)): FormatText,
