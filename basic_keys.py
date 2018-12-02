@@ -98,9 +98,6 @@ def get_keys(m):
         except KeyError: pass
     return []
 
-def uppercase_letters(m):
-    insert(''.join(get_keys(m)).upper())
-
 def press_keys(m):
     mods = get_modifiers(m)
     keys = get_keys(m)
