@@ -118,7 +118,7 @@ ctx.keymap({
     'more <dgndictation> [over]': [' ', text],
     'word <dgnwords>': word,
 
-    '(%s)+ [<dgndictation>]' % (' | '.join(formatters)): FormatText,
+    '(%s) [<dgndictation>]' % (' | '.join(formatters)): FormatText,
 
     # more keys and modifier keys are defined in basic_keys.py
 
