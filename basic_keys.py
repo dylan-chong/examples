@@ -1,7 +1,7 @@
 from talon.voice import Context, Str, press
 import string
 
-alpha_alt = 'share bat cap drum each fine gust harp sit jury crunch look made need odd pit quench red sun trap urge vest whale plex yank zip'.split()
+alpha_alt = 'share bat cot drum each fine gust harp sit jury crunch look made need odd paint quench red sun trap urge vote whale plex yank zeal'.split()
 
 f_keys = {f'F {i}': f'f{i}' for i in range(1, 13)}
 # arrows are separated because 'up' has a high false positive rate
@@ -59,10 +59,10 @@ symbols = {
     'backslash': '\\',
 }
 modifiers = {
-    'cheerio': 'cmd',
+    'apple': 'cmd',
     'con': 'ctrl',
     'big': 'shift',
-    'altering': 'alt',
+    'alter': 'alt',
     'mash mod': 'cmd-shift-ctrl',
 }
 
