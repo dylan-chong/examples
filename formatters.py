@@ -79,7 +79,7 @@ def FormatText(m):
         sep = ''
     Str(sep.join(words))(None)
 
-ctx = Context('input')
+ctx = Context('formatters')
 ctx.keymap({
     'word <dgnwords>': word,
 
