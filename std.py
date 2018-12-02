@@ -31,31 +31,9 @@ def parse_words(m):
 def insert(s):
     Str(s)(None)
 
-def text(m):
-    insert(join_words(parse_words(m)).lower())
-
-def sentence_text(m):
-    text = join_words(parse_words(m)).lower()
-    insert(text.capitalize())
-
 def word(m):
     text = join_words(list(map(parse_word, m.dgnwords[0]._words)))
     insert(text.lower())
-
-def surround(by):
-    def func(i, word, last):
-        if i == 0: word = by + word
-        if last: word += by
-        return word
-    return func
-
-def rot13(i, word, _):
-    out = ''
-    for c in word.lower():
-        if c in string.ascii_lowercase:
-            c = chr((((ord(c) - ord('a')) + 13) % 26) + ord('a'))
-        out += c
-    return out
 
 formatters = {
     'natword': (True, lambda i, word, _: word if i == 0 else ' '+word),
