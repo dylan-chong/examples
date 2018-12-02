@@ -79,18 +79,9 @@ def FormatText(m):
         sep = ''
     Str(sep.join(words))(None)
 
-def copy_bundle(m):
-    bundle = ui.active_app().bundle
-    clip.set(bundle)
-    app.notify('Copied app bundle', body='{}'.format(bundle))
-
 ctx = Context('input')
 ctx.keymap({
     'word <dgnwords>': word,
 
     '(%s) [<dgndictation>]' % (' | '.join(formatters)): FormatText,
-
-    # more keys and modifier keys are defined in basic_keys.py
-
-    'copy active bundle': copy_bundle,
 })
