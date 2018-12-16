@@ -5,7 +5,12 @@ alpha_alt = 'share bat cot drum each fine gust harp site jury crunch look made n
 
 f_keys = {f'F {i}': f'f{i}' for i in range(1, 13)}
 # arrows are separated because 'up' has a high false positive rate
-arrows = ['left', 'right', 'up', 'down']
+arrows = {
+    'left': 'left',
+    'right': 'right',
+    'gup': 'up',
+    'down': 'down',
+}
 simple_keys = {
     'tab': 'tab',
     'quit': 'escape',
@@ -68,7 +73,6 @@ modifiers = {
 
 alphabet = dict(zip(alpha_alt, string.ascii_lowercase))
 digits = {str(i): str(i) for i in range(10)}
-arrows = {k: k for k in arrows}
 keys = {}
 keys.update(f_keys)
 keys.update(simple_keys)
@@ -112,7 +116,7 @@ ctx.keymap({
     '{basic_keys.modifiers}* {basic_keys.alphabet}+': press_keys,
     '{basic_keys.modifiers}* {basic_keys.digits}+': press_keys,
     '{basic_keys.modifiers}* {basic_keys.keys}+': press_keys,
-    '(go | {basic_keys.modifiers}+) {basic_keys.arrows}+': press_keys,
+    '{basic_keys.modifiers}+ {basic_keys.arrows}+': press_keys,
 })
 ctx.set_list('alphabet', alphabet.keys())
 ctx.set_list('arrows', arrows.keys())
