@@ -40,8 +40,6 @@ ctx.keymap({
     'key let': 'let',
     'key var': 'var',
     'key val': 'val',
-    # Note: You may need to create a word in Dragon's dictionary for `bool` to
-    # recognise
     'key bool': 'bool',
     'key boolean': 'boolean',
     'key int': 'int',

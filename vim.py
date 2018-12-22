@@ -3,11 +3,11 @@ from talon.voice import Word, Context, Key, Rep, Str, press
 ctx = Context('vim')
 ctx.keymap({
     'align (par|paragraph)': 'gwip',
-    'save': [Key('escape'), ':w', Key('enter')],
-    'exit file': [':q', Key('enter')],
-    'force save': [Key('escape'), ':w!', Key('enter')],
-    'save exit': [Key('escape'), ':wq', Key('enter')],
-    'save all': [Key('escape'), ':wa', Key('enter')],
+    'save': Key('escape : w enter'),
+    'exit file': Key(': q enter'),
+    'force save': Key('escape : w ! enter'),
+    'save exit':  Key('escape : w q enter'),
+    'save all':   Key('escape : w a enter'),
     'move line up': 'ddkP',
     'move line down': 'ddp',
     'change word': 'ciw',
