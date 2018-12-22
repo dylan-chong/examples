@@ -36,16 +36,29 @@ def word(m):
     insert(text.lower())
 
 formatters = {
-    'natword': (True, lambda i, word, _: word if i == 0 else ' '+word),
-    'spaywid': (True, lambda i, word, _: word+' '),
+    # e.g. 'hello world'
+    'natword': (True, lambda i, word, _: word if i == 0 else ' ' + word),
+    # e.g. 'hello world '
+    'spaywid': (True, lambda i, word, _: word + ' '),
+    # e.g. 'helloWorld'
     'camel': (True, lambda i, word, _: word if i == 0 else word.capitalize()),
-    'relpath': (True, lambda i, word, _: word if i == 0 else '/'+word),
-    'dotword': (True, lambda i, word, _: word if i == 0 else '.'+word),
-    'score': (True, lambda i, word, _: word if i == 0 else '_'+word),
-    'upper-score': (True, lambda i, word, _: (word if i == 0 else '_'+word).upper()),
+    # e.g. 'hello/world'
+    'relpath': (True, lambda i, word, _: word if i == 0 else '/' + word),
+    # e.g. 'hello.world'
+    'dotword': (True, lambda i, word, _: word if i == 0 else '.' + word),
+    # e.g. 'hello_world'
+    'score': (True, lambda i, word, _: word if i == 0 else '_' + word),
+    # e.g. 'HELLO_WORLD'
+    'upper-score': (True, lambda i, word, _: (word if i == 0 else '_' + word).upper()),
+    # e.g. 'helloworld'
     'jumble': (True, lambda i, word, _: word),
-    'sentence': (True, lambda i, word, _: word.capitalize() if i == 0 else " "+word),
+    # e.g. 'Hello world'
+    'sentence': (True, lambda i, word, _: word.capitalize() if i == 0 else " " + word),
+    # e.g. 'Hello world '
+    'spaytince': (True, lambda i, word, _: word.capitalize() + " " if i == 0 else word + " "),
+    # e.g. 'HelloWorld'
     'proper': (True, lambda i, word, _: word.capitalize()),
+    # e.g. 'Hello World'
     'title': (False, lambda i, word, _: word.capitalize()),
 }
 
