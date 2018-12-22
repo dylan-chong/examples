@@ -3,6 +3,7 @@ from talon.voice import Word, Context, Key, Rep, Str, press
 ctx = Context('programming')
 
 ctx.keymap({
+    # Programming Operators
     'compare equal': ' == ',
     'compare not equal': ' != ',
     'compare greater': ' > ',
@@ -23,4 +24,42 @@ ctx.keymap({
     'set minus equal': ' -= ',
     'set times equal': ' *= ',
     'set divide equal': ' /= ',
+
+    # Programming Keywords
+    'key class': 'class',
+    'key fun': 'fun',
+    'key end': 'end',
+    'key function': 'function',
+    'key const': 'const',
+    'key let': 'let',
+    'key var': 'var',
+    'key val': 'val',
+    # Note: You may need to create a word in Dragon's dictionary for `bool` to
+    # recognise
+    'key bool': 'bool',
+    'key boolean': 'boolean',
+    'key int': 'int',
+    'key module': 'module',
+    'key deaf': 'def',
+    'key null': 'null',
+    'key nil': 'nil',
+    'key for': 'for',
+    'key while': 'while',
+    'key if': 'if',
+    'key else': 'else',
+    'key do': 'do',
+    'key when': 'when',
+    'key case': 'case',
+    'key conned': 'cond',
+    'key return': 'return',
+    'key ee-lif': 'elif',
+    'key new': 'new',
+    'key this': 'this',
+    'key self': 'self',
+    'key true': 'true',
+    'key false': 'false',
+    'key try': 'try',
+    'key except': 'except',
+    'key catch': 'catch',
+    'key finally': 'finally',
 })
