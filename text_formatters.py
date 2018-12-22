@@ -12,10 +12,12 @@ mapping = {
 # used for auto-spacing
 punctuation = set('.,-!?')
 
+
 def parse_word(word):
     word = str(word).lstrip('\\').split('\\', 1)[0]
     word = mapping.get(word, word)
     return word
+
 
 def join_words(words, sep=' '):
     out = ''
@@ -25,15 +27,19 @@ def join_words(words, sep=' '):
         out += word
     return out
 
+
 def parse_words(m):
     return list(map(parse_word, m.dgndictation[0]._words))
+
 
 def insert(s):
     Str(s)(None)
 
+
 def word(m):
     text = join_words(list(map(parse_word, m.dgnwords[0]._words)))
     insert(text.lower())
+
 
 formatters = {
     # e.g. 'hello world'
@@ -61,6 +67,7 @@ formatters = {
     # e.g. 'Hello World'
     'title': (False, lambda i, word, _: word.capitalize()),
 }
+
 
 def FormatText(m):
     fmt = []
@@ -91,6 +98,7 @@ def FormatText(m):
     if not spaces:
         sep = ''
     Str(sep.join(words))(None)
+
 
 ctx = Context('text_formatters')
 ctx.keymap({

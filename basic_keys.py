@@ -85,14 +85,17 @@ keymap.update(arrows)
 keymap.update(alphabet)
 keymap.update(digits)
 
+
 def insert(s):
     Str(s)(None)
+
 
 def get_modifiers(m):
     try:
         return [modifiers[mod] for mod in m['basic_keys.modifiers']]
     except KeyError:
         return []
+
 
 def get_keys(m):
     groups = ['basic_keys.keys', 'basic_keys.arrows', 'basic_keys.digits', 'basic_keys.alphabet']
@@ -102,6 +105,7 @@ def get_keys(m):
         except KeyError: pass
     return []
 
+
 def press_keys(m):
     mods = get_modifiers(m)
     keys = get_keys(m)
@@ -110,6 +114,7 @@ def press_keys(m):
         keys = keys[1:]
     for k in keys:
         press(k)
+
 
 ctx = Context('basic_keys')
 ctx.keymap({
