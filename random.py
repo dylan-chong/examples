@@ -22,4 +22,6 @@ ctx.keymap({
     'switch panes': Key('ctrl-s ; ctrl-s z'),
 
     'notes complete line': notes_complete_line,
+
+    'short cat': Key('cmd-shift-space'),
 })
