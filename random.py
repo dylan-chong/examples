@@ -2,8 +2,9 @@
 Propietary commands for my workflow
 """
 
-from talon.voice import Word, Context, Key, Rep, Str, press
+from talon.voice import Word, Context, Key, Rep, Str
 import datetime
+import time
 
 
 def notes_complete_line(_):
@@ -12,6 +13,7 @@ def notes_complete_line(_):
 
     Str(str(datetime.datetime.now()))(None)
     Key('space cmd-v')(None)
+    time.sleep(0.6)  # Give user chance to see what was typed
 
     Key('cmd-up')(None)
 
