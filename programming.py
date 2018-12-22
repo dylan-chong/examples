@@ -24,6 +24,12 @@ ctx.keymap({
     'set minus equal': ' -= ',
     'set times equal': ' *= ',
     'set divide equal': ' /= ',
+    'lamb (dash|-)': ' -> ',
+    'lamb eek': ' => ',
+    'back (dash|-)': ' <- ',
+    'pie opper': '|> ',  # sounds like 'pipe operator' for Elixir
+    'slash comment': '// ',
+    'pie dunder': '__',
 
     # Programming Keywords
     'key class': 'class',
