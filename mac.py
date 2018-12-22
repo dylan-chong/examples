@@ -1,7 +1,9 @@
 from talon.voice import Word, Context, Key, Rep, Str, press
+import time
 
 ctx = Context('mac')
 ctx.keymap({
+    # Text editing
     'mac delete line': Key('cmd-right cmd-shift-left cmd-x backspace'),
     'mac line up': Key(
         'cmd-right cmd-shift-left cmd-x '
@@ -12,4 +14,7 @@ ctx.keymap({
     ),
     'mac copy all': Key('cmd-a cmd-c'),
     'mac cut all': Key('cmd-a cmd-x'),
+
+    # Random mac commands
+    'spotlight': [Key('cmd-space'), lambda _: time.sleep(0.1)],
 })
