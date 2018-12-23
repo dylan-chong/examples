@@ -18,6 +18,16 @@ def notes_complete_line(_):
     Key('cmd-up')(None)
 
 
+def run_alfred_command(command):
+    return [
+        Key('cmd-space'),
+        lambda _: time.sleep(0.2),
+        command,
+        lambda _: time.sleep(0.2),
+        Key('enter'),
+    ]
+
+
 ctx = Context('random')
 ctx.keymap({
     # tmux (assumes prefix key is control-s)
@@ -26,4 +36,19 @@ ctx.keymap({
     'notes complete line': notes_complete_line,
 
     'short cat': Key('cmd-shift-space'),
+
+    'edit in vim': Key('cmd-a cmd-c cmd-ctrl-v'),
+
+    'open in new tab': Key('cmd-c cmd-t cmd-v enter'),
+
+    'clipboard': run_alfred_command('clipboard'),
+    'clear notifications': run_alfred_command('clear notifications'),
+    'toggle music': run_alfred_command('play'),
+
+    'jupiter run all': [
+        Key('cmd-shift-f'),
+        lambda _: time.sleep(0.1),
+        'restart kernel and run all cells',
+        Key('down down enter'),
+    ],
 })
