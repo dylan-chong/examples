@@ -3,7 +3,7 @@ from talon.voice import Word, Context, Key, Rep, Str, press
 ctx = Context('vim')
 ctx.keymap({
     # Files
-    'save': Key('escape : w enter'),
+    'save file': Key('escape : w enter'),
     'exit': Key(': q enter'),
     'force save': Key('escape : w ! enter'),
     'save exit':  Key('escape : w q enter'),
