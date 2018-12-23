@@ -89,7 +89,7 @@ def FormatText(m):
         word = parse_word(word)
         for name in reversed(fmt):
             smash, func = formatters[name]
-            word = func(i, word, i == len(words)-1)
+            word = func(i, word.lower(), i == len(words)-1)
             spaces = spaces and not smash
         tmp.append(word)
     words = tmp
