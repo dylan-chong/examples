@@ -4,7 +4,7 @@ ctx = Context('vim')
 ctx.keymap({
     'align (par|paragraph)': 'gwip',
     'save': Key('escape : w enter'),
-    'exit file': Key(': q enter'),
+    'exit': Key(': q enter'),
     'force save': Key('escape : w ! enter'),
     'save exit':  Key('escape : w q enter'),
     'save all':   Key('escape : w a enter'),
