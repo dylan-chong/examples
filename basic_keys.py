@@ -13,7 +13,7 @@ arrows = {
 }
 simple_keys = {
     'tab': 'tab',
-    'quit': 'escape',
+    'escape': 'escape',
     'enter': 'enter',
     'space': 'space',
     'home': 'home',

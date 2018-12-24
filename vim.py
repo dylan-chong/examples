@@ -1,4 +1,5 @@
 from talon.voice import Word, Context, Key, Rep, Str, press
+import time
 
 ctx = Context('vim')
 ctx.keymap({
@@ -14,6 +15,9 @@ ctx.keymap({
     'jump back': Key('ctrl-t'),
 
     'align (par|paragraph)': 'gwip',
+
+    # tmux needs a delay to register an escape properly
+    'quit': [Key('escape'), lambda _: time.sleep(0.2)],
 
     'move line up': 'ddkP',
     'move line down': 'ddp',
