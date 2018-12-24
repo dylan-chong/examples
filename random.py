@@ -28,6 +28,17 @@ def run_alfred_command(command):
     ]
 
 
+def open_app(m):
+    app_name_words = map(lambda word: word.word, m._words[2])
+    app_name = ' '.join(app_name_words)
+
+    Key('cmd-space')(None)
+    time.sleep(0.2)
+    Str(app_name)(None)
+    time.sleep(0.2)
+    Key('enter')(None)
+
+
 ctx = Context('random')
 ctx.keymap({
     # tmux (assumes prefix key is control-s)
@@ -44,6 +55,7 @@ ctx.keymap({
     'clipboard': run_alfred_command('clipboard'),
     'clear notifications': run_alfred_command('clear notifications'),
     'toggle music': run_alfred_command('play'),
+    'open app <dgndictation>': open_app,
 
     'jupiter run all': [
         Key('cmd-shift-f'),
