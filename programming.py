@@ -43,4 +43,26 @@ ctx.keymap({
     'key nil': 'nil',
     'key conned': 'cond',
     'key ee-lif': 'elif',
+
+    # Terms/words that dragon has some difficulty understanding even after
+    # manually correcting dragon to train it (or are convenience words)
+    'term to do': 'TODO: ',
+    'term to do next': 'TODO NEXT: ',
+    'term to do after': 'TODO AFTER: ',
+    'term to do sometime': 'TODO SOMETIME: ',
+    'term to do later': 'TODO LATER: ',
+    'term to do last': 'TODO LAST: ',
+    'term whip': 'WIP ',
+    'term git': 'git',
+    'term diff': 'diff',
+    'term grep': 'grep',
+    'term kotlin': 'kotlin',
+    # It is difficult to get dragon to not interpret saying 'python' as
+    # 'hyphen'
+    'term python': 'python',
+    'term cat': 'cat',  # Dragon has difficulty recognising this word
+    'term upper jason': 'JSON',
+    'term jason': 'json',
+    'term in it': 'init',
+    'term sync': 'sync',
 })
