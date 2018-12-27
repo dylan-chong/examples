@@ -52,6 +52,7 @@ ctx.keymap({
 
     'open in new tab': Key('cmd-c cmd-t cmd-v enter'),
 
+    # Spotlight/Alfred stuff
     'clipboard': run_alfred_command('clipboard'),
     'clear notifications': run_alfred_command('clear notifications'),
     'toggle music': run_alfred_command('play'),

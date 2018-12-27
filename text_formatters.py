@@ -41,6 +41,16 @@ def word(m):
     insert(text.lower())
 
 
+def title_case_capitalise_word(index, word, _):
+    words_to_keep_lowercase = (
+        'a,an,the,at,by,for,in,of,on,to,up,and,as,but,or,nor'.split(',')
+    )
+    if index == 0 or word not in words_to_keep_lowercase:
+        return word.capitalize()
+    else:
+        return word
+
+
 formatters = {
     # e.g. 'hello world'
     'natword': (True, lambda i, word, _: word if i == 0 else ' ' + word),
@@ -65,7 +75,7 @@ formatters = {
     # e.g. 'HelloWorld'
     'proper': (True, lambda i, word, _: word.capitalize()),
     # e.g. 'Hello World'
-    'title': (False, lambda i, word, _: word.capitalize()),
+    'title': (False, title_case_capitalise_word),
 }
 
 
