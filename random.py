@@ -17,25 +17,24 @@ def notes_complete_line(_):
     Key('cmd-up')(None)
 
 
-def run_alfred_command(command):
-    return [
-        Key('cmd-space'),
-        lambda _: time.sleep(0.2),
-        command,
-        lambda _: time.sleep(0.2),
-        Key('enter'),
-    ]
+class AlfredCommands:
+    @staticmethod
+    def open_app(m):
+        app_name_words = map(lambda word: word.word, m._words[2])
+        app_name = ' '.join(app_name_words)
+        AlfredCommands.run(app_name)
 
+    @staticmethod
+    def define(command):
+        return lambda: AlfredCommands.run(command)
 
-def open_app(m):
-    app_name_words = map(lambda word: word.word, m._words[2])
-    app_name = ' '.join(app_name_words)
-
-    Key('cmd-space')(None)
-    time.sleep(0.2)
-    Str(app_name)(None)
-    time.sleep(0.2)
-    Key('enter')(None)
+    @staticmethod
+    def run(command):
+        Key('cmd-space')(None)
+        time.sleep(0.2)
+        Str(command)(None)
+        time.sleep(0.2)
+        Key('enter')(None)
 
 
 ctx = Context('random')
@@ -52,10 +51,10 @@ ctx.keymap({
     'open in new tab': Key('cmd-c cmd-t cmd-v enter'),
 
     # Spotlight/Alfred stuff
-    'clipboard': run_alfred_command('clipboard'),
-    'clear notifications': run_alfred_command('clear notifications'),
-    'toggle music': run_alfred_command('play'),
-    'open app <dgndictation>': open_app,
+    'clipboard': AlfredCommands.define('clipboard'),
+    'clear notifications': AlfredCommands.define('clear notifications'),
+    'toggle music': AlfredCommands.define('play'),
+    'open app <dgndictation>': AlfredCommands.open_app,
 
     'jupiter run all': [
         Key('cmd-shift-f'),
