@@ -13,7 +13,6 @@ def notes_complete_line(_):
 
     Str(str(datetime.datetime.now()))(None)
     Key('space cmd-v')(None)
-    time.sleep(0.6)  # Give user chance to see what was typed
 
     Key('cmd-up')(None)
 
@@ -46,7 +45,7 @@ ctx.keymap({
 
     'notes complete line': notes_complete_line,
 
-    'short cat': Key('cmd-shift-space'),
+    'short cat': [Key('cmd-shift-space'), lambda _: time.sleep(0.2)],
 
     'edit in vim': Key('cmd-a cmd-c cmd-ctrl-v'),
 
