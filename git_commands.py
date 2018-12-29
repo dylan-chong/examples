@@ -1,4 +1,4 @@
-from .git_commands_dsl import GitCommandRuleBuilder
+from git_commands_dsl import GitCommandRuleBuilder
 
 
 # Common refs for convenience. The user will still have to type out most branch
