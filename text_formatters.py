@@ -56,6 +56,8 @@ formatters = {
     'natword': (True, lambda i, word, _: word if i == 0 else ' ' + word),
     # e.g. 'hello world '
     'spaywid': (True, lambda i, word, _: word + ' '),
+    # e.g. 'hello-world'
+    'dashwid': (True, lambda i, word, _: word if i == 0 else '-' + word),
     # e.g. 'helloWorld'
     'camel': (True, lambda i, word, _: word if i == 0 else word.capitalize()),
     # e.g. 'hello/world'
