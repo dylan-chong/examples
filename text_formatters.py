@@ -41,7 +41,7 @@ def word(m):
     insert(text.lower())
 
 
-def title_case_capitalise_word(index, word, _):
+def title_case_capitalize_word(index, word, _):
     words_to_keep_lowercase = (
         'a,an,the,at,by,for,in,of,on,to,up,and,as,but,or,nor'.split(',')
     )
@@ -77,7 +77,7 @@ formatters = {
     # e.g. 'HelloWorld'
     'proper': (True, lambda i, word, _: word.capitalize()),
     # e.g. 'Hello World'
-    'title': (False, title_case_capitalise_word),
+    'title': (False, title_case_capitalize_word),
 }
 
 
