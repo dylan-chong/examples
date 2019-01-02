@@ -53,17 +53,17 @@ def title_case_capitalize_word(index, word, _):
 
 formatters = {
     # e.g. 'hello world'
-    'natword': (True, lambda i, word, _: word if i == 0 else ' ' + word),
+    'nat-way': (True, lambda i, word, _: word if i == 0 else ' ' + word),
     # e.g. 'hello world '
-    'spaywid': (True, lambda i, word, _: word + ' '),
+    'spay-way': (True, lambda i, word, _: word + ' '),
     # e.g. 'hello-world'
-    'spine-word': (True, lambda i, word, _: word if i == 0 else '-' + word),
+    'spine-way': (True, lambda i, word, _: word if i == 0 else '-' + word),
     # e.g. 'helloWorld'
     'camel': (True, lambda i, word, _: word if i == 0 else word.capitalize()),
     # e.g. 'hello/world'
     'relpath': (True, lambda i, word, _: word if i == 0 else '/' + word),
     # e.g. 'hello.world'
-    'dotword': (True, lambda i, word, _: word if i == 0 else '.' + word),
+    'dotway': (True, lambda i, word, _: word if i == 0 else '.' + word),
     # e.g. 'hello_world'
     'score': (True, lambda i, word, _: word if i == 0 else '_' + word),
     # e.g. 'HELLO_WORLD'
