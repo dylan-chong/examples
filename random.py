@@ -50,6 +50,8 @@ ctx.keymap({
 
     'open in new tab': Key('cmd-c cmd-t cmd-v enter'),
 
+    'do pause': lambda _: time.sleep(0.4),
+
     # Spotlight/Alfred stuff
     'clipboard': AlfredCommands.define('clipboard'),
     'clear notifications': AlfredCommands.define('clear notifications'),
