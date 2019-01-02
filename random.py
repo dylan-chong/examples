@@ -26,7 +26,7 @@ class AlfredCommands:
 
     @staticmethod
     def define(command):
-        return lambda: AlfredCommands.run(command)
+        return lambda _: AlfredCommands.run(command)
 
     @staticmethod
     def run(command):
