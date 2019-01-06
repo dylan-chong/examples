@@ -6,6 +6,8 @@ ctx.keymap({
     # Programming Operators
     'compare equal': ' == ',
     'compare not equal': ' != ',
+    'compare triple equal': ' === ',
+    'compare triple not equal': ' !== ',
     'compare greater': ' > ',
     'compare less': ' < ',
     'compare greater equal': ' >= ',
