@@ -16,6 +16,11 @@ def notes_complete_line(_):
 
     Key('cmd-up')(None)
 
+    # Move cursor down to bulleted list (yes this is very propietary)
+    Key('down')(None)
+    Key('down')(None)
+    Key('down')(None)
+
 
 class AlfredCommands:
     @staticmethod
