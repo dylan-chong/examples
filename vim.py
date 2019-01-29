@@ -4,11 +4,10 @@ import time
 ctx = Context('vim')
 ctx.keymap({
     # Files
-    'save file': Key('escape : w enter'),
+    'save': Key('escape : w enter'),
     'exit': Key(': q enter'),
     'force save': Key('escape : w ! enter'),
-    'save exit':  Key('escape : w q enter'),
-    'save all':   Key('escape : w a enter'),
+    'save all': Key('escape : w a enter'),
 
     # Tags
     '(jump deaf|jump to definition)': Key('ctrl-]'),
