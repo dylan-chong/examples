@@ -116,5 +116,5 @@ ctx = Context('text_formatters')
 ctx.keymap({
     'word <dgnwords>': word,
 
-    '(%s) [<dgndictation>]' % (' | '.join(formatters)): FormatText,
+    '(%s) <dgndictation>++' % (' | '.join(formatters)): FormatText,
 })
