@@ -2,6 +2,7 @@ from talon.voice import Word, Context, Key, Rep, RepPhrase, Str, press
 from talon import app, ctrl, clip, ui
 from talon_init import TALON_HOME, TALON_PLUGINS, TALON_USER
 import string
+import re
 
 # cleans up some Dragon output from <dgndictation>
 mapping = {
@@ -29,7 +30,16 @@ def join_words(words, sep=' '):
 
 
 def parse_words(m):
-    return list(map(parse_word, m.dgndictation[0]._words))
+    top_level_words = list(map(parse_word, m.dgndictation[0]._words))
+
+    all_words = []
+    for word in top_level_words:
+        # Dragon treats groups of words like 'top-level' and 'United States of
+        # America' as a single word. Split it so we don't get spaces in our
+        # variable names that we are trying to dictate
+        all_words.extend(re.split(r'\s|-', word))
+
+    return all_words
 
 
 def insert(s):
