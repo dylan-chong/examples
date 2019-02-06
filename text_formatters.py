@@ -46,9 +46,9 @@ def insert(s):
     Str(s)(None)
 
 
-def word(m):
+def word(m, transformer=lambda word: word.lower()):
     text = join_words(list(map(parse_word, m.dgnwords[0]._words)))
-    insert(text.lower())
+    insert(transformer(text))
 
 
 def title_case_capitalize_word(index, word, _):
@@ -125,6 +125,8 @@ def FormatText(m):
 ctx = Context('text_formatters')
 ctx.keymap({
     'word <dgnwords>': word,
+    'snake word <dgnwords>': lambda m: word(m, lambda w: w.capitalize()),
+    'upper word <dgnwords>': lambda m: word(m, lambda w: w.upper()),
 
     '(%s) <dgndictation>++' % (' | '.join(formatters)): FormatText,
 })
