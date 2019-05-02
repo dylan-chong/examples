@@ -14,7 +14,8 @@ ctx.keymap({
     ),
     'mac copy all': Key('cmd-a cmd-c'),
     'mac cut all': Key('cmd-a cmd-x'),
+    'mac paste all': Key('cmd-a cmd-v'),
 
     # Random mac commands
-    'spotlight': [Key('cmd-space'), lambda _: time.sleep(0.1)],
+    'spotlight': [Key('cmd-space'), lambda _: time.sleep(0.3)],
 })

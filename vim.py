@@ -18,7 +18,7 @@ ctx.keymap({
     # tmux needs a delay to register an escape properly
     'quit': [Key('escape'), lambda _: time.sleep(0.2)],
 
-    'move line up': 'ddkP',
+    'move line gup': 'ddkP',
     'move line down': 'ddp',
 
     'change word': 'ciw',

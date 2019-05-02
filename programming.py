@@ -17,10 +17,10 @@ ctx.keymap({
     'bitwise or': ' | ',
     'bitwise and': ' & ',
     'bitwise ex or': ' ^ ',
-    'math times': ' * ',
-    'math divide': ' / ',
-    'math add': ' + ',
-    'math minus': ' - ',
+    'mat times': ' * ',
+    'mat divide': ' / ',
+    'mat add': ' + ',
+    'mat minus': ' - ',
     'set value': ' = ',
     'set plus equal': ' += ',
     'set minus equal': ' -= ',
@@ -32,6 +32,7 @@ ctx.keymap({
     'pie opper': '|> ',  # sounds like 'pipe operator' for Elixir
     'slash comment': '// ',
     'pie dunder': '__',
+    'define as': ' :: ',
 
     # Programming Keywords
     'key const': 'const',
@@ -67,4 +68,5 @@ ctx.keymap({
     'term jason': 'json',
     'term in it': 'init',
     'term sync': 'sync',
+    'term vim': 'vim',
 })
