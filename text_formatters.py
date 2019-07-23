@@ -88,6 +88,8 @@ formatters = {
     'proper': (True, lambda i, word, _: word.capitalize()),
     # e.g. 'Hello World'
     'title': (False, title_case_capitalize_word),
+    # e.g. 'hello, world'
+    'params': (True, lambda i, word, _: word if i == 0 else ', ' + word),
 }
 
 
@@ -125,7 +127,7 @@ def FormatText(m):
 ctx = Context('text_formatters')
 ctx.keymap({
     'word <dgnwords>': word,
-    'snake word <dgnwords>': lambda m: word(m, lambda w: w.capitalize()),
+    'snake <dgnwords>': lambda m: word(m, lambda w: w.capitalize()),
     'upper word <dgnwords>': lambda m: word(m, lambda w: w.upper()),
 
     '(%s) <dgndictation>++' % (' | '.join(formatters)): FormatText,
