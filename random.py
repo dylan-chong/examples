@@ -42,6 +42,19 @@ class AlfredCommands:
         Key('enter')(None)
 
 
+def sleep(seconds):
+    return lambda _: time.sleep(seconds)
+
+
+def keys_with_delays(keys_string, delay=0.2):
+    def execute(_):
+        for key in keys_string.split(' '):
+            Key(key)(None)
+            time.sleep(delay)
+
+    return execute
+
+
 ctx = Context('random')
 ctx.keymap({
     # tmux (assumes prefix key is control-s)
@@ -49,13 +62,13 @@ ctx.keymap({
 
     'notes complete line': notes_complete_line,
 
-    'short cat': [Key('cmd-shift-space'), lambda _: time.sleep(0.2)],
+    'short cat': [Key('cmd-shift-space'), sleep(0.2)],
 
-    'edit in vim': Key('cmd-a cmd-c cmd-ctrl-v'),
+    'edit in vim': keys_with_delays('cmd-a cmd-c cmd-ctrl-v'),
 
-    'open in new tab': Key('cmd-c cmd-t cmd-v enter'),
+    'open in new tab': keys_with_delays('cmd-c cmd-t cmd-v enter'),
 
-    'do pause': lambda _: time.sleep(0.4),
+    'do pause': sleep(0.4),
 
     # Spotlight/Alfred stuff
     'clipboard': AlfredCommands.define('clipboard'),
@@ -65,7 +78,7 @@ ctx.keymap({
 
     'jupiter run all': [
         Key('cmd-shift-f'),
-        lambda _: time.sleep(0.1),
+        sleep(0.1),
         'restart kernel and run all cells',
         Key('down down enter'),
     ],
