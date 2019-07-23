@@ -69,4 +69,7 @@ ctx.keymap({
         'restart kernel and run all cells',
         Key('down down enter'),
     ],
+
+    # TODO: get repeats working properly
+    'triple back tick': '```',
 })
