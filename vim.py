@@ -1,10 +1,15 @@
 from talon.voice import Word, Context, Key, Rep, Str, press
 import time
 
+
+def Sleep(delay):
+    return lambda _: time.sleep(delay)
+
+
 ctx = Context('vim')
 ctx.keymap({
     # Files
-    'save': Key('escape : w enter'),
+    'save': [Key('escape'), Sleep(0.2), Key(': w enter')],
     'exit': Key(': q enter'),
     'force save': Key('escape : w ! enter'),
     'save all': Key('escape : w a enter'),
@@ -16,7 +21,7 @@ ctx.keymap({
     'align (par|paragraph)': 'gwip',
 
     # tmux needs a delay to register an escape properly
-    'quit': [Key('escape'), lambda _: time.sleep(0.2)],
+    'quit': [Key('escape'), Sleep(0.2)],
 
     'move line gup': 'ddkP',
     'move line down': 'ddp',
