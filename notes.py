@@ -13,6 +13,8 @@ def on_key(typ, e):
         return
     if e != 'ctrl-shift-cmd-c':
         return
+    if not e.up:
+        return
 
     e.block()
 
