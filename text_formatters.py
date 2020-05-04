@@ -4,6 +4,13 @@ from talon_init import TALON_HOME, TALON_PLUGINS, TALON_USER
 import string
 import re
 
+
+WORD_SUBSTITUTES = {
+    '.': 'point',
+    'e-mail': 'email',
+}
+
+
 # cleans up some Dragon output from <dgndictation>
 mapping = {
     'semicolon': ';',
@@ -17,6 +24,7 @@ punctuation = set('.,-!?')
 def parse_word(word):
     word = str(word).lstrip('\\').split('\\', 1)[0]
     word = mapping.get(word, word)
+    word = WORD_SUBSTITUTES.get(word, word)
     return word
 
 
@@ -48,12 +56,13 @@ def insert(s):
 
 def word(m, transformer=lambda word: word.lower()):
     text = join_words(list(map(parse_word, m.dgnwords[0]._words)))
+    text = WORD_SUBSTITUTES.get(text, text)
     insert(transformer(text))
 
 
 def title_case_capitalize_word(index, word, _):
     words_to_keep_lowercase = (
-        'a,an,the,at,by,for,in,of,on,to,up,and,as,but,or,nor'.split(',')
+        'a,an,the,at,by,for,in,is,of,on,to,up,and,as,but,or,nor'.split(',')
     )
     if index == 0 or word not in words_to_keep_lowercase:
         return word.capitalize()
@@ -64,6 +73,8 @@ def title_case_capitalize_word(index, word, _):
 formatters = {
     # e.g. 'hello world'
     'nat-way': (True, lambda i, word, _: word if i == 0 else ' ' + word),
+    # e.g. 'HELLO WORLD'
+    'upper-nat-way': (True, lambda i, word, _: word.upper() if i == 0 else ' ' + word.upper()),
     # e.g. 'hello world '
     'spay-way': (True, lambda i, word, _: word + ' '),
     # e.g. 'hello-world'
@@ -126,7 +137,7 @@ def FormatText(m):
 
 ctx = Context('text_formatters')
 ctx.keymap({
-    'word <dgnwords>': word,
+    '(word | would) <dgnwords>': word,
     'snake <dgnwords>': lambda m: word(m, lambda w: w.capitalize()),
     'upper word <dgnwords>': lambda m: word(m, lambda w: w.upper()),
 

@@ -18,7 +18,7 @@ ctx.keymap({
     '(jump deaf|jump to definition)': Key('ctrl-]'),
     'jump back': Key('ctrl-t'),
 
-    'align (par|paragraph)': 'gwip',
+    'align (par|paragraph)': 'gwip^',
 
     # tmux needs a delay to register an escape properly
     'quit': [Key('escape'), Sleep(0.2)],
@@ -29,4 +29,7 @@ ctx.keymap({
     'change word': 'ciw',
 
     'switch split': Key('ctrl-w ctrl-w'),
+
+    'scroll gup': Key('ctrl-u'),
+    'scroll down': Key('ctrl-d'),
 })

@@ -6,6 +6,7 @@ from talon.voice import Context, Key, Str
 from talon import tap
 from talon import ui
 import datetime
+import time
 
 
 def on_key(typ, e):
@@ -18,16 +19,15 @@ def on_key(typ, e):
 
     e.block()
 
-    print('test ', e)
+    #  time.sleep(0.3)
     notes_complete_line(None)
 
 
 def notes_complete_line(_):
     Key('cmd-right cmd-shift-left cmd-x backspace')(None)
-    Key('cmd-down * space')(None)
+    Key('cmd-down cmd-v cmd-left space left')(None)
 
     Str(str(datetime.datetime.now()))(None)
-    Key('space cmd-v')(None)
 
     Key('cmd-up')(None)
 

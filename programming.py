@@ -70,9 +70,4 @@ ctx.keymap({
     'term in it': 'init',
     'term sync': 'sync',
     'term vim': 'vim',
-
-    # TODO: Replace these with substitution inside text formatters
-    'term point': 'point',
-    'term snake point': 'Point',
-    'term cite': 'cite',  # Useful in latex
 })

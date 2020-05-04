@@ -1,7 +1,7 @@
 from talon.voice import Context, Str, press
 import string
 
-alpha_alt = 'share bat cot drum each fine gust harp site jury crunch look made need odd paint quest red sun trap urge vote wake plex yes zeal'.split()
+alpha_alt = 'share bat cot drum each fine gust harp site jury crunch look made need odd paint quest red sun trap urge vent wake plex yes zeal'.split()
 
 f_keys = {f'F {i}': f'f{i}' for i in range(1, 13)}
 # arrows are separated because 'up' has a high false positive rate
@@ -36,7 +36,7 @@ symbols = {
     'dollar': '$',
     'underscore': '_',
     'semi': ';',
-    'ratio': ':',
+    'colon': ':',
 
     'lacket': '[',
     'racket': ']',

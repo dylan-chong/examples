@@ -67,4 +67,9 @@ ctx.keymap({
 
     # TODO: get repeats working properly
     'triple back tick': '```',
+    'triple dash': '---',
+
+    'bib cite': [' \\cite{}', Key('left')],  # Useful in latex
+
+    'rerun command': Key('ctrl-c ctrl-c up enter'),
 })
